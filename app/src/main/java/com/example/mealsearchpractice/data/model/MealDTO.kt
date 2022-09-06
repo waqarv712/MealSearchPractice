@@ -5,6 +5,7 @@ import com.example.mealsearchpractice.domain.model.Meal
 import com.example.mealsearchpractice.domain.model.MealDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import com.example.mealsearchpractice.base.BaseResponse
 
 @JsonClass(generateAdapter = true)
 data class MealDTO(
@@ -114,7 +115,7 @@ data class MealDTO(
     val strTags: String?,
     @Json(name = "strYoutube")
     val strYoutube: String?
-)
+) : BaseResponse()
 
 fun MealDTO.toDomainMeal(): Meal {
     return Meal(
