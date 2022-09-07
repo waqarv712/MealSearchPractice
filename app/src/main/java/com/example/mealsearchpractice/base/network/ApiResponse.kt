@@ -1,5 +1,5 @@
-package com.example.mealsearchpractice.base
-import com.example.mealsearchpractice.base.error.ApiError
+package com.example.mealsearchpractice.base.network
+import com.example.mealsearchpractice.base.network.error.ApiError
 
 sealed class ApiResponse<out T : BaseResponse> {
     data class Success<out T : BaseResponse>(val code: Int, val data: T) : ApiResponse<T>()

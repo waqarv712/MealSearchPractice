@@ -9,6 +9,8 @@ import com.example.mealsearchpractice.utils.NetworkUtils
 import com.facebook.stetho.okhttp3.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -119,6 +121,17 @@ class NetworkModule {
 
     @Provides
     @Singleton
+    fun provideKotlinJsonAdapterFactory(): KotlinJsonAdapterFactory = KotlinJsonAdapterFactory()
+
+    @Provides
+    @Singleton
+    fun provideMoshi(kotlinJsonAdapterFactory: KotlinJsonAdapterFactory): Moshi =
+        Moshi.Builder()
+            .add(kotlinJsonAdapterFactory)
+            .build()
+
+    @Provides
+    @Singleton
     fun provideMoshiConverterFactory(moshi: Moshi): MoshiConverterFactory =
         MoshiConverterFactory.create(
             moshi
@@ -135,9 +148,9 @@ class NetworkModule {
         okHttp: OkHttpClient,
         moshiConverterFactory: MoshiConverterFactory
     ): Retrofit = Retrofit.Builder()
+        .addConverterFactory(moshiConverterFactory)
         .baseUrl(URL)
         .client(okHttp)
-        .addConverterFactory(moshiConverterFactory)
         .build()
 
 }

@@ -1,4 +1,4 @@
-package com.example.mealsearchpractice.base.error
+package com.example.mealsearchpractice.base.network.error
 
 import androidx.annotation.Keep
 import com.squareup.moshi.Json
