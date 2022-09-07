@@ -1,7 +1,7 @@
-package com.example.mealsearchpractice.base
+package com.example.mealsearchpractice.base.network
 
 import android.util.MalformedJsonException
-import com.example.mealsearchpractice.base.error.ApiError
+import com.example.mealsearchpractice.base.network.error.ApiError
 import retrofit2.Response
 
 const val MALFORMED_JSON_EXCEPTION_CODE = 0

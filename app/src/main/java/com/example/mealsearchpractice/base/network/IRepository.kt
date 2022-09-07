@@ -1,4 +1,4 @@
-package com.example.mealsearchpractice.base
+package com.example.mealsearchpractice.base.network
 
 import retrofit2.Response
 

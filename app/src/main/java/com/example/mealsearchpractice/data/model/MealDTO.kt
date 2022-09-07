@@ -5,7 +5,7 @@ import com.example.mealsearchpractice.domain.model.Meal
 import com.example.mealsearchpractice.domain.model.MealDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import com.example.mealsearchpractice.base.BaseResponse
+import com.example.mealsearchpractice.base.network.BaseResponse
 
 @JsonClass(generateAdapter = true)
 data class MealDTO(

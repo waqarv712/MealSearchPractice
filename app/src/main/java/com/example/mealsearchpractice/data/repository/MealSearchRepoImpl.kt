@@ -1,7 +1,7 @@
 package com.example.mealsearchpractice.data.repository
 
-import com.example.mealsearchpractice.base.ApiResponse
-import com.example.mealsearchpractice.base.BaseRepository
+import com.example.mealsearchpractice.base.network.ApiResponse
+import com.example.mealsearchpractice.base.network.BaseRepository
 import com.example.mealsearchpractice.data.model.MealsDTO
 import com.example.mealsearchpractice.data.remote.MealSearchAPI
 import com.example.mealsearchpractice.domain.repository.MealSearchRepository
